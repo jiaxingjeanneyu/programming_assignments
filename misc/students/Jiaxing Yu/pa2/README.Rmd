@@ -1,1 +1,39 @@
+library(languageR)
+library(tidyverse)
+
+beginningReaders
+
+summary(beginningReaders)
+head(beginningReaders)
+
+english 
+
+summary(english)
+head(english)
+
+danish
+
+
+summary(danish)
+head(danish)
+
+beginningReaders %>%
+  ggplot () +
+  aes(x = Word, y = OrthLength) + 
+    geom_point ()
+    
+english %>%
+
+  ggplot () +
+  aes(x = Word, y = AgeSubject) + 
+   stat_boxplot(coef = 1.5) + 
+  geom_bar() + 
+  scale_fill_grey(start = 0.2, end = 0.8,
+  na.value = "red")
+
+danish %>%
+
+   ggplot() +
+   aes(x = Subject, y = Sex) +
+   stat_summary_bin(fun = "mean", geom = "bar")
 
